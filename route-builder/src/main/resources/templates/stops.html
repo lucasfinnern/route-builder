@@ -6,7 +6,11 @@
 </head>
 <body>
     <h1>Route Stops</h1>
-    <p>There are no stops in your routes :(</p>
+
+    <ol th:each="address : ${addressList}">
+        <li th:text="${address}"/>
+    </ol>
+    <p th:unless="${addressList} and ${addressList.size()}">There are no stops in your route :(</p>
     <a href="/map">Start Route</a>
 </body>
 </html>
